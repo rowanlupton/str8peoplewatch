@@ -11,4 +11,4 @@ To use this bot, you will need to:
 * plug the keys into a `.env` file on your computer (or use another method of setting environment variables)
 * decide whether you want to continually run it
   * if not, you can run it from your computer
-  * if yes, you'll probably want to throw it up on a server, be that a vps, heroku, whatever
+  * if yes, you'll probably want to throw it up on a server, be that a vps, heroku, local raspberry pi, whatever
