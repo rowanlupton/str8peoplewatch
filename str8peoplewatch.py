@@ -15,9 +15,5 @@ streamListener = StreamListener()
 stream = tweepy.Stream(auth = api.auth, listener=streamListener)
 
 stream.filter(track=['are straight people okay'])
-# tweets = api.home_timeline.search(q="are straight people okay")
-# for tweet in tweets:
-#     # if "are straight people okay" in tweet.text:
-#     print('@'+tweet.user.screen_name + ':', tweet.text)
 
 # api.update_status("no, they're really not")
