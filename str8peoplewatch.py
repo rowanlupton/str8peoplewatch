@@ -27,7 +27,7 @@ class StreamListener(tweepy.StreamListener):
                     pass
             elif not hasattr(status, 'retweeted_status'):
                 # if ('straight' in statusText or 'okay' in statusText):
-                if (re.search(r'(([^@]str(8|aight))|([^(str8)]p\S*p(l|s)e?))(?mi)', statusText) is not None):
+                if (re.search(r'(([^@]str(8|aight))|([^(str8)]p\S*p(l|s)e?)|(ok))(?mi)', statusText) is not None):
                     try:
                         api.retweet(status.id)
                     except: # this should get proper error handling
