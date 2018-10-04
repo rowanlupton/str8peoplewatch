@@ -34,5 +34,6 @@ responses = [
     'oh, honey, if only',
     'lol, no',
     'absolutely not',
-    '200% no'
+    '200% no',
+    'heteroNo'
 ]
