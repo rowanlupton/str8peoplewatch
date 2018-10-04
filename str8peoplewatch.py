@@ -19,8 +19,13 @@ class StreamListener(tweepy.StreamListener):
             statusText = status._json['extended_tweet']['full_text']
         else:
             statusText = status.text
-        if not statusText.startswith('RT'):
-            if any(mentions['screen_name'] == HANDLE for mentions in status.entities['user_mentions']):
+        if any(mentions['screen_name'] == HANDLE for mentions in status.entities['user_mentions']):
+            if hasattr(status, 'quoted_status'):
+                try:
+                    api.retweet(status.id)
+                except: # this should get proper error handling
+                    pass
+            elif not statusText.startswith('RT'):
                 # if ('straight' in statusText or 'okay' in statusText):
                 if (re.search(r'(([^@]str(8|aight))|([^(str8)]p\S*p(l|s)e?))(?mi)', statusText) is not None):
                     try:
