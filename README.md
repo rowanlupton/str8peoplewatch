@@ -2,7 +2,7 @@
 Are straight people okay? Stay tuned.
 
 ## about
-This is a (currently twitter-only) bot that listens for anybody asking if straight people are okay, and responds that, no, they are not. There's some allowance for different spellings and an option to add an extra word between "straight" and "okay", e.g. "are straight people doing okay?". There could definitely be some more sophisticated regexing going on here.
+This is a (currently twitter-only) bot that listens for anybody asking if straight people are okay, and responds with the only logical conclusion. There's some allowance for different spellings and an option to add an extra word between "straight" and "okay", e.g. "are straight people doing okay?". There could definitely be some more sophisticated regexing going on here.
 It will also probably retweet @mentions that say some variation on "straight" or "people" (e.g. "str8" will work, as will "ppl" or "peeps").
 
 ## how to use
