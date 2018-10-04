@@ -22,7 +22,7 @@ class StreamListener(tweepy.StreamListener):
 
         if any(mentions['screen_name'] == HANDLE for mentions in status.entities['user_mentions']):
             # if ('straight' in statusText or 'okay' in statusText):
-            if (re.search(r'((str(8|aight))|(p\S*p(l|s)e?))(?mi)', statusText) is not None):
+            if (re.search(r'(([^@]str(8|aight))|([^(str8)]p\S*p(l|s)e?))(?mi)', statusText) is not None):
                 try:
                     api.retweet(status.id)
                 except: # this should get proper error handling
