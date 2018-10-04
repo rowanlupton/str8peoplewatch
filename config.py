@@ -33,5 +33,6 @@ responses = [
     'what the fuck do you think',
     'oh, honey, if only',
     'lol, no',
-    'absolutely not'
+    'absolutely not',
+    '200% no'
 ]
