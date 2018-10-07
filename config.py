@@ -30,10 +30,10 @@ responses = [
     'so not okay',
     'nooooooooope',
     'nah',
-    'what the fuck do you think',
     'oh, honey, if only',
     'lol, no',
     'absolutely not',
     '200% no',
-    'heteroNo'
+    'heterNo',
+    'does it even matter?'
 ]
