@@ -38,7 +38,8 @@ class StreamListener(tweepy.StreamListener):
         if (re.search(r'(\S*r\S*) (str\S*) (p\S*p(l|s)e?) (\S* )?((ok\S*)|(alright))(?mi)', statusText) is None):
             pass
         else:
-            api.update_status(random.choice(responses), in_reply_to_status_id=status.id, auto_populate_reply_metadata=True)
+            if not hasattr(status, 'retweeted_status'):
+                api.update_status(random.choice(responses), in_reply_to_status_id=status.id, auto_populate_reply_metadata=True)
 
 streamListener = StreamListener()
 stream = tweepy.Stream(auth = api.auth, listener=streamListener)
