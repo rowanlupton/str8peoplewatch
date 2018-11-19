@@ -19,21 +19,21 @@ class StreamListener(tweepy.StreamListener):
             statusText = status._json['extended_tweet']['full_text']
         else:
             statusText = status.text
-        if any(mentions['screen_name'] == HANDLE for mentions in status.entities['user_mentions']):
-            if hasattr(status, 'quoted_status'):
-                try:
-                    api.retweet(status.id)
-                except: # this should get proper error handling
-                    pass
-            elif not hasattr(status, 'retweeted_status'):
-                # if ('straight' in statusText or 'okay' in statusText):
-                if (re.search(r'(([^@]str(8|aight))|([^(str8)]p\S*p(l|s)e?)|(ok))(?mi)', statusText) is not None):
-                    try:
-                        api.retweet(status.id)
-                    except: # this should get proper error handling
-                        pass
 
-            # elif (status.user.id in api.followers_ids()):
+        ### this quoted secion does retweets on mentions, it feels like too much to me
+        # if any(mentions['screen_name'] == HANDLE for mentions in status.entities['user_mentions']):
+        #     if hasattr(status, 'quoted_status'):
+        #         try:
+        #             api.retweet(status.id)
+        #         except: # this should get proper error handling
+        #             pass
+        #     elif not hasattr(status, 'retweeted_status'):
+        #         # if ('straight' in statusText or 'okay' in statusText):
+        #         if (re.search(r'(([^@]str(8|aight))|([^(str8)]p\S*p(l|s)e?)|(ok))(?mi)', statusText) is not None):
+        #             try:
+        #                 api.retweet(status.id)
+        #             except: # this should get proper error handling
+        #                 pass
 
         if (re.search(r'(\S*r\S*) (str\S*) (p\S*p(l|s)e?) (\S* )?((ok\S*)|(alright))(?mi)', statusText) is None):
             pass
